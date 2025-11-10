@@ -1,19 +1,14 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import DualCards from './components/DualCards';
-import { AnalysisSection, CallingSection, PricingSection, DevelopersSection } from './components/Sections';
 import Footer from './components/Footer';
+import AppRoutes from './components/AppRoutes';
 
 function App() {
   return (
-    <div className="font-inter text-gray-900">
+    <div className="font-inter text-gray-900 min-h-screen flex flex-col">
       <Navbar />
-      <Hero />
-      <DualCards />
-      <AnalysisSection />
-      <CallingSection />
-      <PricingSection />
-      <DevelopersSection />
+      <div className="flex-1">
+        <AppRoutes />
+      </div>
       <Footer />
     </div>
   );

@@ -1,17 +1,5 @@
 import { useState } from 'react';
-import DualCards from './DualCards';
-
-export default function HomeSections() {
-  return (
-    <>
-      <DualCards />
-      <AnalysisSection />
-      <CallingSection />
-      <PricingSection />
-      <DevelopersSection />
-    </>
-  );
-}
+import { Link } from 'react-router-dom';
 
 export function AnalysisSection() {
   const [fileName, setFileName] = useState('sample-call.wav');
@@ -36,7 +24,7 @@ export function AnalysisSection() {
   };
 
   return (
-    <section id="analysis" className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
@@ -102,7 +90,7 @@ export function CallingSection() {
   };
 
   return (
-    <section id="calling" className="py-20 bg-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
@@ -141,7 +129,7 @@ export function PricingSection() {
   const discount = 0.85; // 15% off
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Pricing</h2>
@@ -180,7 +168,7 @@ export function PricingSection() {
             <p className="text-gray-700">Create an account and start analyzing or dialing in minutes.</p>
             <div className="mt-4 flex gap-3">
               <a href="#" className="px-4 py-2 rounded-md bg-indigo-600 text-white">Get Started Free</a>
-              <a href="#developers" className="px-4 py-2 rounded-md border">View Docs</a>
+              <Link to="/developers" className="px-4 py-2 rounded-md border">View Docs</Link>
             </div>
           </div>
         </div>
@@ -209,7 +197,7 @@ function PriceCard({ title, price, features, popular }) {
 
 export function DevelopersSection() {
   return (
-    <section id="developers" className="py-20 bg-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Built for Builders.</h2>
         <div className="mt-8 grid md:grid-cols-2 gap-6">

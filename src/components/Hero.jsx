@@ -1,8 +1,9 @@
 import Spline from '@splinetool/react-spline';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
@@ -17,8 +18,8 @@ export default function Hero() {
               Analyze every conversation. Automate every outreach. Scalable AI for Enterprises, CRMs, and Telephony Providers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#analysis" className="px-5 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">Explore Analysis</a>
-              <a href="#calling" className="px-5 py-3 rounded-md bg-white/80 backdrop-blur border border-black/10 text-gray-900 hover:bg-white">Explore Calling</a>
+              <Link to="/analysis" className="px-5 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">Explore Analysis</Link>
+              <Link to="/calling" className="px-5 py-3 rounded-md bg-white/80 backdrop-blur border border-black/10 text-gray-900 hover:bg-white">Explore Calling</Link>
             </div>
           </div>
         </div>
