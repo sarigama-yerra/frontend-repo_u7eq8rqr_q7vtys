@@ -1,4 +1,17 @@
 import { useState } from 'react';
+import DualCards from './DualCards';
+
+export default function HomeSections() {
+  return (
+    <>
+      <DualCards />
+      <AnalysisSection />
+      <CallingSection />
+      <PricingSection />
+      <DevelopersSection />
+    </>
+  );
+}
 
 export function AnalysisSection() {
   const [fileName, setFileName] = useState('sample-call.wav');
@@ -133,11 +146,11 @@ export function PricingSection() {
         <div className="flex items-center justify-between">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Pricing</h2>
           <div className="flex items-center gap-2">
-            <span className={`text-sm ${!annual ? 'font-semibold' : 'text-gray-500'}`}>Monthly</span>
+            <span className={`${!annual ? 'font-semibold' : 'text-gray-500'} text-sm`}>Monthly</span>
             <button onClick={() => setAnnual((v) => !v)} className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200">
               <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition ${annual ? 'translate-x-5' : 'translate-x-1'}`} />
             </button>
-            <span className={`text-sm ${annual ? 'font-semibold' : 'text-gray-500'}`}>Annual (15% off)</span>
+            <span className={`${annual ? 'font-semibold' : 'text-gray-500'} text-sm`}>Annual (15% off)</span>
           </div>
         </div>
 
@@ -201,8 +214,7 @@ export function DevelopersSection() {
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Built for Builders.</h2>
         <div className="mt-8 grid md:grid-cols-2 gap-6">
           <div className="p-6 rounded-xl border bg-gray-50">
-            <div className="font-mono text-sm text-gray-800">
-{`# Analyze a call\n\ncurl -X POST https://api.callmetrik.com/analyze \\\n  -H 'Authorization: Bearer <API_KEY>' \\\n  -F file=@call.wav\n\n# Dial with an AI agent\n\ncurl -X POST https://api.callmetrik.com/dial \\\n  -H 'Authorization: Bearer <API_KEY>' \\\n  -H 'Content-Type: application/json' \\\n  -d '{"to":"+919999999999","agent":"sales-demo"}'`}
+            <div className="font-mono text-sm text-gray-800">{`# Analyze a call\n\ncurl -X POST https://api.callmetrik.com/analyze \\\n  -H 'Authorization: Bearer <API_KEY>' \\\n  -F file=@call.wav\n\n# Dial with an AI agent\n\ncurl -X POST https://api.callmetrik.com/dial \\\n  -H 'Authorization: Bearer <API_KEY>' \\\n  -H 'Content-Type: application/json' \\\n  -d '{"to":"+919999999999","agent":"sales-demo"}'`}
             </div>
           </div>
           <div className="p-6 rounded-xl border bg-white">
